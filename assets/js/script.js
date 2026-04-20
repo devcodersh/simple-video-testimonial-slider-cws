@@ -5,7 +5,7 @@ document.documentElement.style.setProperty("--play-color", vtsData.playColor);
   "use strict";
 
   document.addEventListener("DOMContentLoaded", function () {
-    const section = document.querySelector(".testimonial-section");
+    const section = document.querySelector(".svts-testimonial-section");
     const swiperContainer = document.querySelector(".mySwiper");
 
     if (!section || !swiperContainer || typeof Swiper === "undefined") return;
@@ -42,8 +42,8 @@ document.documentElement.style.setProperty("--play-color", vtsData.playColor);
         const slide = video.closest(".swiper-slide");
         if (!slide) return;
 
-        const content = slide.querySelector(".card-content");
-        const playBtn = slide.querySelector(".play-btn");
+        const content = slide.querySelector(".svts-card-content");
+        const playBtn = slide.querySelector(".svts-play-btn");
 
         if (content) content.classList.remove("hidden");
         if (playBtn) playBtn.style.display = "flex";
@@ -54,12 +54,12 @@ document.documentElement.style.setProperty("--play-color", vtsData.playColor);
        Play Button Click
     -------------------------------- */
     section.addEventListener("click", function (e) {
-      const playBtn = e.target.closest(".play-btn");
+      const playBtn = e.target.closest(".svts-play-btn");
       if (!playBtn) return;
 
       const slide = playBtn.closest(".swiper-slide");
       const video = slide.querySelector("video");
-      const content = slide.querySelector(".card-content");
+      const content = slide.querySelector(".svts-card-content");
 
       if (!video) return;
 
@@ -80,8 +80,8 @@ document.documentElement.style.setProperty("--play-color", vtsData.playColor);
         const slide = video.closest(".swiper-slide");
         if (!slide) return;
 
-        const content = slide.querySelector(".card-content");
-        const playBtn = slide.querySelector(".play-btn");
+        const content = slide.querySelector(".svts-card-content");
+        const playBtn = slide.querySelector(".svts-play-btn");
 
         if (content) content.classList.remove("hidden");
         if (playBtn) playBtn.style.display = "flex";

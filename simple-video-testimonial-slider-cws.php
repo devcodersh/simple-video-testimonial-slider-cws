@@ -32,10 +32,10 @@ function vts_slider_shortcode() {
     ob_start();
     ?>
 
-    <section class="testimonial-section">
-        <div class="testimonial-header">
+    <section class="svts-testimonial-section">
+        <div class="svts-testimonial-header">
             <h2>Loved By Niche Digital Agencies Across The US!</h2>
-            <div class="nav-btns">
+            <div class="svts-nav-btns">
                 <div class="swiper-button-next"></div>
                 <div class="swiper-button-prev"></div>
             </div>
@@ -46,10 +46,10 @@ function vts_slider_shortcode() {
 
                 <?php foreach ($slides as $slide): ?>
                     <div class="swiper-slide">
-                        <div class="video-wrapper">
+                        <div class="svts-video-wrapper">
                             <video src="<?php echo esc_url($slide['video']); ?>" muted></video>
 
-                            <div class="play-btn">
+                            <div class="svts-play-btn">
                                 <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 height="1em"
@@ -62,11 +62,11 @@ function vts_slider_shortcode() {
                                 </svg>
                             </div>
 
-                            <div class="card-content">
-                                <div class="stars">★★★★★</div>
+                            <div class="svts-card-content">
+                                <div class="svts-stars">★★★★★</div>
                                 <h3><?php echo esc_html($slide['name']); ?></h3>
-                                <p class="role"><?php echo esc_html($slide['role']); ?></p>
-                                <p class="desc"><?php echo esc_html($slide['desc']); ?></p>
+                                <p class="svts-role"><?php echo esc_html($slide['role']); ?></p>
+                                <p class="svts-desc"><?php echo esc_html($slide['desc']); ?></p>
                             </div>
                         </div>
                     </div>

@@ -1,18 +1,18 @@
-.testimonial-section {
+.svts-testimonial-section {
   max-width: 1280px;
   margin: 60px auto;
   padding: 0 20px;
   position: relative;
 }
 
-.testimonial-header {
+.svts-testimonial-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 30px;
 }
 
-.testimonial-header h2 {
+.svts-testimonial-header h2 {
   font-size: 36px;
   font-weight: 700;
   line-height: 1.3;
@@ -21,7 +21,7 @@
   font-family: "Plus Jakarta Sans", Sans-serif;
 }
 
-.nav-btns {
+.svts-nav-btns {
   position: initial;
   z-index: 10;
   display: flex;
@@ -30,8 +30,8 @@
   transform: initial;
 }
 
-.nav-btns .swiper-button-next,
-.nav-btns .swiper-button-prev {
+.svts-nav-btns .swiper-button-next,
+.svts-nav-btns .swiper-button-prev {
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -46,11 +46,11 @@
   display: flex;
 }
 
-.nav-btns .swiper-button-next {
+.svts-nav-btns .swiper-button-next {
   justify-content: center;
 }
 
-.nav-btns .swiper-button-prev {
+.svts-nav-btns .swiper-button-prev {
   justify-content: center;
   top: inherit;
 }
@@ -71,20 +71,20 @@
   border-radius: 16px;
 }
 
-.video-wrapper {
+.svts-video-wrapper {
   position: relative;
   width: 100%;
   aspect-ratio: 9 / 16;
 }
 
-.video-wrapper video {
+.svts-video-wrapper video {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
 }
 
-.play-btn {
+.svts-play-btn {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -101,7 +101,7 @@
   z-index: 2;
 }
 
-.card-content {
+.svts-card-content {
   padding: 20px;
   position: absolute;
   bottom: 0;
@@ -114,40 +114,40 @@
   transition: opacity 0.3s;
 }
 
-.card-content.hidden {
+.svts-card-content.hidden {
   opacity: 0;
   visibility: hidden;
 }
 
-.stars {
+.svts-stars {
   color: #ffc107;
   font-size: 16px;
   margin-bottom: 5px;
 }
 
-.desc,
-.role {
+.svts-desc,
+.svts-role {
   font-size: 13px;
   color: #ccc;
 }
 
-.card-content h3 {
+.svts-card-content h3 {
   margin: 0;
   font-size: 16px;
   font-weight: 600;
 }
 
-.role {
+.svts-role {
   margin: 0;
 }
 
-.desc {
+.svts-desc {
   line-height: 1.4;
   margin: 0;
 }
 
-.nav-btns .swiper-button-next:hover,
-.nav-btns .swiper-button-prev:hover {
+.svts-nav-btns .swiper-button-next:hover,
+.svts-nav-btns .swiper-button-prev:hover {
   background: #000 !important;
   color: #fff !important;
   border-color: #000 !important;
