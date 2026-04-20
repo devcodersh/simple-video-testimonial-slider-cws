@@ -148,7 +148,7 @@
 
 .svts-nav-btns .swiper-button-next:hover,
 .svts-nav-btns .swiper-button-prev:hover {
-  background: #000 !important;
-  color: #fff !important;
-  border-color: #000 !important;
+  background: var(--nav-hover-color) !important;
+  color: var(--nav-hover-icon-color) !important;
+  border-color: var(--nav-hover-color) !important;
 }

@@ -5,7 +5,10 @@ function vts_settings_page() {
     if (isset($_POST['vts_save'])) {
 
         update_option('vts_nav_color', sanitize_text_field($_POST['nav_color']));
+        update_option('vts_nav_hover_color', sanitize_text_field($_POST['nav_hover_color']));
+        update_option('vts_nav_hover_icon_color', sanitize_text_field($_POST['nav_hover_icon_color']));
         update_option('vts_play_color', sanitize_text_field($_POST['play_color']));
+        update_option('vts_play_icon_color', sanitize_text_field($_POST['play_icon_color']));
 
         $slides = [];
         if (!empty($_POST['video'])) {
@@ -31,8 +34,16 @@ function vts_settings_page() {
         <form method="post">
 
             <h2>Colors</h2>
+            <label>Navigation Buttons Color:</label>
             <input type="color" name="nav_color" value="<?php echo get_option('vts_nav_color', '#89AD29'); ?>">
+            <label>Navigation Buttons Hover Color:</label>
+            <input type="color" name="nav_hover_color" value="<?php echo get_option('vts_nav_hover_color', '#6a47ed'); ?>">
+            <label>Navigation Buttons Hover Icon Color:</label>
+            <input type="color" name="nav_hover_icon_color" value="<?php echo get_option('vts_nav_hover_icon_color', '#6a47ed'); ?>">
+            <label>Play Button BgColor:</label>
             <input type="color" name="play_color" value="<?php echo get_option('vts_play_color', '#89AD29'); ?>">
+            <label>Play Icon Color:</label>
+            <input type="color" name="play_icon_color" value="<?php echo get_option('vts_play_icon_color', '#6a47ed'); ?>">
 
             <h2>Slides</h2>
 

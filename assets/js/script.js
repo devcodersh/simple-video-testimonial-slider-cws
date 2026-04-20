@@ -1,5 +1,9 @@
 document.documentElement.style.setProperty("--nav-color", vtsData.navColor);
 document.documentElement.style.setProperty("--play-color", vtsData.playColor);
+document.documentElement.style.setProperty("--play-icon-color", vtsData.playIconColor);
+document.documentElement.style.setProperty("--nav-hover-color", vtsData.navHoverColor);
+document.documentElement.style.setProperty("--nav-hover-icon-color", vtsData.navHoverIconColor);
+
 
 (function () {
   "use strict";

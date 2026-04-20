@@ -20,7 +20,10 @@ function vts_enqueue_assets() {
 
     wp_localize_script('vts-script', 'vtsData', [
         'navColor' => get_option('vts_nav_color', '#89AD29'),
+        'navHoverColor' => get_option('vts_nav_hover_color', '#6a47ed'),
+        'navHoverIconColor' => get_option('vts_nav_hover_icon_color', '#6a47ed'),
         'playColor' => get_option('vts_play_color', '#89AD29'),
+        'playIconColor' => get_option('vts_play_icon_color', '#6a47ed'),
     ]);
 }
 add_action('wp_enqueue_scripts', 'vts_enqueue_assets');
@@ -54,7 +57,7 @@ function vts_slider_shortcode() {
                                 xmlns="http://www.w3.org/2000/svg"
                                 height="1em"
                                 viewBox="0 0 384 512"
-                                fill="#6a47ed"
+                                fill="var(--play-icon-color)"
                                 >
                                 <path
                                     d="M361 215C375.2 223.2 384 238.1 384 254.1s-8.75 30.9-23 39L87 473c-14.4 8.1-32 7.9-46.2-.5S0 450.4 0 433.1V78.9C0 61.6 9.75 45.6 24 37.1S72.6 31.9 87 40.1L361 215z"
