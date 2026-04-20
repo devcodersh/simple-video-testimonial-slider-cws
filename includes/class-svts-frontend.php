@@ -45,7 +45,7 @@ class SVTS_Frontend {
                     <?php foreach ($slides as $slide): ?>
                         <div class="swiper-slide">
                             <div class="svts-video-wrapper">
-                                <video src="<?php echo esc_url($slide['video']); ?>" muted preload="metadata"></video>
+                                <video src="<?php echo esc_url($slide['video']); ?>" preload="metadata"></video>
 
                                 <div class="svts-play-btn" aria-label="<?php esc_attr_e('Play video', 'simple-video-testimonial-slider-cws'); ?>">
                                     <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 384 512" fill="var(--svts-play-icon-color)">

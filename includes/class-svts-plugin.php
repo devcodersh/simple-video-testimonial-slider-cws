@@ -124,6 +124,17 @@ class SVTS_Plugin {
             SVTS_VERSION
         );
 
+        // Add inline CSS to prevent color flash on page load
+        $inline_css = sprintf(
+            ':root { --svts-nav-color: %s; --svts-nav-hover-color: %s; --svts-nav-hover-icon-color: %s; --svts-play-color: %s; --svts-play-icon-color: %s; }',
+            get_option('svts_nav_color', '#89AD29'),
+            get_option('svts_nav_hover_color', '#6a47ed'),
+            get_option('svts_nav_hover_icon_color', '#6a47ed'),
+            get_option('svts_play_color', '#89AD29'),
+            get_option('svts_play_icon_color', '#6a47ed')
+        );
+        wp_add_inline_style('svts-style', $inline_css);
+
         wp_enqueue_script(
             'svts-script',
             SVTS_PLUGIN_URL . 'assets/js/script.js',
