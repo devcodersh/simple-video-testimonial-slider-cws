@@ -1,0 +1,138 @@
+# Copyright (C) 2024 Your Name
+# This file is distributed under the same license as the Simple Video Testimonial Slider CWS package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Simple Video Testimonial Slider CWS 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/simple-video-testimonial-slider-cws\n"
+"POT-Creation-Date: 2024-12-20 12:00:00+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: includes/class-svts-admin.php:25
+msgid "Video Testimonial Slider Settings"
+msgstr ""
+
+#: includes/class-svts-admin.php:35
+msgid "Color Settings"
+msgstr ""
+
+#: includes/class-svts-admin.php:38
+msgid "Navigation Buttons Color"
+msgstr ""
+
+#: includes/class-svts-admin.php:44
+msgid "Navigation Buttons Hover Background"
+msgstr ""
+
+#: includes/class-svts-admin.php:50
+msgid "Navigation Buttons Hover Icon"
+msgstr ""
+
+#: includes/class-svts-admin.php:56
+msgid "Play Button Background"
+msgstr ""
+
+#: includes/class-svts-admin.php:62
+msgid "Play Button Icon"
+msgstr ""
+
+#: includes/class-svts-admin.php:70
+msgid "Testimonials"
+msgstr ""
+
+#: includes/class-svts-admin.php:85
+msgid "Video URL"
+msgstr ""
+
+#: includes/class-svts-admin.php:87
+msgid "Enter the URL of your video file (MP4, WebM, OGV supported)"
+msgstr ""
+
+#: includes/class-svts-admin.php:92
+msgid "Name"
+msgstr ""
+
+#: includes/class-svts-admin.php:97
+msgid "Role/Position"
+msgstr ""
+
+#: includes/class-svts-admin.php:102
+msgid "Description"
+msgstr ""
+
+#: includes/class-svts-admin.php:110
+msgid "Remove Testimonial"
+msgstr ""
+
+#: includes/class-svts-admin.php:115
+msgid "Add New Testimonial"
+msgstr ""
+
+#: includes/class-svts-admin.php:120
+msgid "Save Settings"
+msgstr ""
+
+#: includes/class-svts-admin.php:125
+msgid "Preview"
+msgstr ""
+
+#: includes/class-svts-admin.php:127
+msgid "Use the shortcode [video_testimonials] to display the slider on your site."
+msgstr ""
+
+#: includes/class-svts-admin.php:135
+msgid "Testimonial"
+msgstr ""
+
+#: includes/class-svts-admin.php:155
+msgid "Are you sure you want to delete this testimonial?"
+msgstr ""
+
+#: includes/class-svts-admin.php:175
+msgid "Security check failed"
+msgstr ""
+
+#: includes/class-svts-admin.php:180
+msgid "You do not have sufficient permissions"
+msgstr ""
+
+#: includes/class-svts-frontend.php:25
+msgid "Loved By Niche Digital Agencies Across The US!"
+msgstr ""
+
+#: includes/class-svts-frontend.php:32
+msgid "No testimonials found. Please add some testimonials in the admin settings."
+msgstr ""
+
+#: includes/class-svts-plugin.php:45
+msgid "Video Slider"
+msgstr ""
+
+#: includes/class-svts-plugin.php:95
+msgid "Play video"
+msgstr ""
+
+#: assets/js/script.js:45
+msgid "Previous testimonial"
+msgstr ""
+
+#: assets/js/script.js:46
+msgid "Next testimonial"
+msgstr ""
+
+#: assets/js/script.js:47
+msgid "This is the first testimonial"
+msgstr ""
+
+#: assets/js/script.js:48
+msgid "This is the last testimonial"
+msgstr ""
+
+#: assets/js/script.js:125
+msgid "Replay video"
+msgstr ""

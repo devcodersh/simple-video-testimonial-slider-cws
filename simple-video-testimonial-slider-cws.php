@@ -1,96 +1,42 @@
 <?php
-/*
-Plugin Name: Simple Video Testimonial Slider CWS
-Plugin URI: https://example.com/simple-video-testimonial-slider-cws
-Description: Custom video testimonial slider with shortcode
-Version: 1.0
-*/
+/**
+ * Plugin Name: Simple Video Testimonial Slider CWS
+ * Plugin URI: https://wordpress.org/plugins/simple-video-testimonial-slider-cws/
+ * Description: A responsive video testimonial slider plugin with customizable colors and easy shortcode integration.
+ * Version: 1.0.0
+ * Author: Your Name
+ * Author URI: https://yourwebsite.com
+ * License: GPL v2 or later
+ * License URI: https://www.gnu.org/licenses/gpl-2.0.html
+ * Text Domain: simple-video-testimonial-slider-cws
+ * Requires at least: 5.0
+ * Tested up to: 6.4
+ * Requires PHP: 7.4
+ * Network: false
+ */
 
-if (!defined('ABSPATH')) exit;
-require_once plugin_dir_path(__FILE__) . 'admin/settings-page.php';
-/* --------------------------
-   Enqueue Assets
--------------------------- */
-function vts_enqueue_assets() {
-    wp_enqueue_style('swiper-css', 'https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.css');
-    wp_enqueue_script('swiper-js', 'https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js', [], null, true);
-
-    wp_enqueue_style('vts-style', plugin_dir_url(__FILE__) . 'assets/css/style.css');
-    wp_enqueue_script('vts-script', plugin_dir_url(__FILE__) . 'assets/js/script.js', ['swiper-js'], null, true);
-
-    wp_localize_script('vts-script', 'vtsData', [
-        'navColor' => get_option('vts_nav_color', '#89AD29'),
-        'navHoverColor' => get_option('vts_nav_hover_color', '#6a47ed'),
-        'navHoverIconColor' => get_option('vts_nav_hover_icon_color', '#6a47ed'),
-        'playColor' => get_option('vts_play_color', '#89AD29'),
-        'playIconColor' => get_option('vts_play_icon_color', '#6a47ed'),
-    ]);
+// Prevent direct access
+if (!defined('ABSPATH')) {
+    exit;
 }
-add_action('wp_enqueue_scripts', 'vts_enqueue_assets');
 
-function vts_slider_shortcode() {
+// Define plugin constants
+define('SVTS_VERSION', '1.0.0');
+define('SVTS_PLUGIN_DIR', plugin_dir_path(__FILE__));
+define('SVTS_PLUGIN_URL', plugin_dir_url(__FILE__));
+define('SVTS_PLUGIN_BASENAME', plugin_basename(__FILE__));
 
-    $slides = get_option('vts_slides', []);
+// Include required files
+require_once SVTS_PLUGIN_DIR . 'includes/class-svts-plugin.php';
 
-    ob_start();
-    ?>
-
-    <section class="svts-testimonial-section">
-        <div class="svts-testimonial-header">
-            <h2>Loved By Niche Digital Agencies Across The US!</h2>
-            <div class="svts-nav-btns">
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
-            </div>
-        </div>
-
-        <div class="swiper mySwiper">
-            <div class="swiper-wrapper">
-
-                <?php foreach ($slides as $slide): ?>
-                    <div class="swiper-slide">
-                        <div class="svts-video-wrapper">
-                            <video src="<?php echo esc_url($slide['video']); ?>" muted></video>
-
-                            <div class="svts-play-btn">
-                                <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                height="1em"
-                                viewBox="0 0 384 512"
-                                fill="var(--play-icon-color)"
-                                >
-                                <path
-                                    d="M361 215C375.2 223.2 384 238.1 384 254.1s-8.75 30.9-23 39L87 473c-14.4 8.1-32 7.9-46.2-.5S0 450.4 0 433.1V78.9C0 61.6 9.75 45.6 24 37.1S72.6 31.9 87 40.1L361 215z"
-                                />
-                                </svg>
-                            </div>
-
-                            <div class="svts-card-content">
-                                <div class="svts-stars">★★★★★</div>
-                                <h3><?php echo esc_html($slide['name']); ?></h3>
-                                <p class="svts-role"><?php echo esc_html($slide['role']); ?></p>
-                                <p class="svts-desc"><?php echo esc_html($slide['desc']); ?></p>
-                            </div>
-                        </div>
-                    </div>
-                <?php endforeach; ?>
-
-            </div>
-        </div>
-    </section>
-
-    <?php
-    return ob_get_clean();
+// Initialize the plugin
+function svts_init() {
+    SVTS_Plugin::get_instance();
 }
-add_shortcode('video_testimonials', 'vts_slider_shortcode');
+add_action('plugins_loaded', 'svts_init');
 
-function vts_add_admin_menu() {
-    add_menu_page(
-        'Video Slider',
-        'Video Slider',
-        'manage_options',
-        'vts-slider',
-        'vts_settings_page'
-    );
-}
-add_action('admin_menu', 'vts_add_admin_menu');
+// Activation hook
+register_activation_hook(__FILE__, array('SVTS_Plugin', 'activate'));
+
+// Deactivation hook
+register_deactivation_hook(__FILE__, array('SVTS_Plugin', 'deactivate'));

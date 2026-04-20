@@ -1,0 +1,89 @@
+.svts-admin-container {
+    max-width: 1200px;
+}
+
+.svts-top-button {
+    margin-bottom: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+.svts-top-button .button {
+    margin: 0;
+}
+
+.svts-section {
+    background: #fff;
+    border: 1px solid #ccd0d4;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    padding: 20px;
+}
+
+.svts-section h2 {
+    margin-top: 0;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+    color: #23282d;
+}
+
+.svts-slide-item {
+    background: #f9f9f9;
+    border: 1px solid #e1e1e1;
+    border-radius: 4px;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+.svts-slide-item h3 {
+    margin-top: 0;
+    color: #23282d;
+    font-size: 16px;
+}
+
+.svts-remove-slide {
+    background: #dc3232;
+    color: #fff;
+    border-color: #dc3232;
+}
+
+.svts-remove-slide:hover {
+    background: #c62828;
+    border-color: #c62828;
+}
+
+.svts-preview-section {
+    background: #fff;
+    border: 1px solid #ccd0d4;
+    border-radius: 4px;
+    padding: 20px;
+}
+
+.svts-preview-notice {
+    background: #fff3cd;
+    border: 1px solid #ffeaa7;
+    border-radius: 4px;
+    padding: 12px;
+    margin: 0;
+}
+
+.svts-preview-notice p {
+    margin: 0;
+    color: #856404;
+}
+
+/* Responsive design */
+@media screen and (max-width: 782px) {
+    .svts-admin-container {
+        margin-left: -10px;
+        margin-right: -10px;
+    }
+
+    .svts-section {
+        margin-left: -10px;
+        margin-right: -10px;
+        border-radius: 0;
+        border-left: none;
+        border-right: none;
+    }
+}

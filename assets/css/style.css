@@ -1,3 +1,13 @@
+/* Simple Video Testimonial Slider CWS - Frontend Styles */
+
+:root {
+  --svts-nav-color: #89AD29;
+  --svts-nav-hover-color: #6a47ed;
+  --svts-nav-hover-icon-color: #6a47ed;
+  --svts-play-color: #89AD29;
+  --svts-play-icon-color: #6a47ed;
+}
+
 .svts-testimonial-section {
   max-width: 1280px;
   margin: 60px auto;
@@ -5,27 +15,34 @@
   position: relative;
 }
 
+/* .svts-swiper{
+  padding-top: 10px;
+} */
+
 .svts-testimonial-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 30px;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 
 .svts-testimonial-header h2 {
-  font-size: 36px;
+  font-size: clamp(24px, 4vw, 36px);
   font-weight: 700;
   line-height: 1.3;
   margin: 0;
   color: #000;
-  font-family: "Plus Jakarta Sans", Sans-serif;
+  font-family: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  flex: 1;
+  min-width: 200px;
 }
 
 .svts-nav-btns {
   position: initial;
   z-index: 10;
   display: flex;
-  flex-direction: row-reverse;
   gap: 10px;
   transform: initial;
 }
@@ -35,8 +52,8 @@
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  color: var(--nav-color);
-  border: 1px solid var(--nav-color);
+  color: var(--svts-nav-color);
+  border: 1px solid var(--svts-nav-color);
   font-size: 18px;
   align-items: center;
   margin: 0;
@@ -44,15 +61,17 @@
   transform: initial;
   cursor: pointer;
   display: flex;
+  justify-content: center;
+  transition: all 0.3s ease;
+  background: transparent;
 }
 
-.svts-nav-btns .swiper-button-next {
-  justify-content: center;
-}
-
-.svts-nav-btns .swiper-button-prev {
-  justify-content: center;
-  top: inherit;
+.svts-nav-btns .swiper-button-next:hover,
+.svts-nav-btns .swiper-button-prev:hover {
+  background: var(--svts-nav-hover-color) !important;
+  color: var(--svts-nav-hover-icon-color) !important;
+  border-color: var(--svts-nav-hover-color) !important;
+  transform: scale(1.05);
 }
 
 .swiper-button-next:after,
@@ -69,12 +88,16 @@
   position: relative;
   overflow: hidden;
   border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
 }
 
 .svts-video-wrapper {
   position: relative;
   width: 100%;
   aspect-ratio: 9 / 16;
+  border-radius: 16px;
+  overflow: hidden;
 }
 
 .svts-video-wrapper video {
@@ -82,6 +105,7 @@
   height: 100%;
   object-fit: cover;
   display: block;
+  border-radius: 16px;
 }
 
 .svts-play-btn {
@@ -89,16 +113,33 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: var(--play-color);
-  color: #89ad29 !important;
+  background: var(--svts-play-color);
   border-radius: 50%;
-  width: 50px;
-  height: 50px;
+  width: 60px;
+  height: 60px;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   z-index: 2;
+  transition: all 0.3s ease;
+  border: 2px solid var(--svts-play-color);
+}
+
+.svts-play-btn:hover {
+  transform: translate(-50%, -50%) scale(1.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.svts-play-btn:focus {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+
+.svts-play-btn svg {
+  width: 20px;
+  height: 20px;
+  margin-left: 2px; /* Center the play icon */
 }
 
 .svts-card-content {
@@ -107,48 +148,179 @@
   bottom: 0;
   left: 0;
   right: 0;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0, #000 50%);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0, rgba(0, 0, 0, 0.8) 50%);
   backdrop-filter: blur(2px);
   color: #fff;
   z-index: 1;
-  transition: opacity 0.3s;
+  transition: all 0.3s ease;
+  border-radius: 0 0 16px 16px;
 }
 
 .svts-card-content.hidden {
   opacity: 0;
   visibility: hidden;
+  transform: translateY(20px);
 }
 
 .svts-stars {
   color: #ffc107;
   font-size: 16px;
-  margin-bottom: 5px;
-}
-
-.svts-desc,
-.svts-role {
-  font-size: 13px;
-  color: #ccc;
+  margin-bottom: 8px;
+  display: flex;
+  gap: 2px;
 }
 
 .svts-card-content h3 {
-  margin: 0;
-  font-size: 16px;
+  margin: 0 0 4px 0;
+  font-size: 18px;
   font-weight: 600;
+  color: #fff;
 }
 
 .svts-role {
-  margin: 0;
+  font-size: 14px;
+  color: #ccc;
+  margin: 0 0 8px 0;
+  font-weight: 500;
 }
 
 .svts-desc {
-  line-height: 1.4;
+  font-size: 14px;
+  color: #eee;
+  line-height: 1.5;
   margin: 0;
 }
 
-.svts-nav-btns .swiper-button-next:hover,
-.svts-nav-btns .swiper-button-prev:hover {
-  background: var(--nav-hover-color) !important;
-  color: var(--nav-hover-icon-color) !important;
-  border-color: var(--nav-hover-color) !important;
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .svts-testimonial-section {
+    padding: 0 15px;
+    margin: 40px auto;
+  }
+
+  .svts-testimonial-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .svts-testimonial-header h2 {
+    font-size: 28px;
+    text-align: center;
+    width: 100%;
+  }
+
+  .svts-nav-btns {
+    align-self: center;
+  }
+
+  .svts-nav-btns .swiper-button-next,
+  .svts-nav-btns .swiper-button-prev {
+    width: 35px;
+    height: 35px;
+  }
+
+  .svts-play-btn {
+    width: 50px;
+    height: 50px;
+  }
+
+  .svts-play-btn svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .svts-card-content {
+    padding: 15px;
+  }
+
+  .svts-card-content h3 {
+    font-size: 16px;
+  }
+
+  .svts-role,
+  .svts-desc {
+    font-size: 13px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .svts-testimonial-section {
+    padding: 0 10px;
+    margin: 30px auto;
+  }
+
+  .svts-testimonial-header h2 {
+    font-size: 24px;
+  }
+
+  .svts-nav-btns .swiper-button-next,
+  .svts-nav-btns .swiper-button-prev {
+    width: 30px;
+    height: 30px;
+    font-size: 14px;
+  }
+
+  .swiper-button-next:after,
+  .swiper-button-prev:after {
+    font-size: 16px;
+  }
+
+  .svts-play-btn {
+    width: 45px;
+    height: 45px;
+  }
+
+  .svts-play-btn svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  .svts-card-content {
+    padding: 12px;
+  }
+
+  .svts-stars {
+    font-size: 14px;
+  }
+
+  .svts-card-content h3 {
+    font-size: 15px;
+  }
+
+  .svts-role,
+  .svts-desc {
+    font-size: 12px;
+  }
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+  .svts-play-btn,
+  .svts-nav-btns .swiper-button-next,
+  .svts-nav-btns .swiper-button-prev,
+  .swiper-slide,
+  .svts-card-content {
+    transition: none;
+  }
+
+  .svts-play-btn:hover {
+    transform: none;
+  }
+
+  .swiper-slide:hover {
+    transform: none;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .svts-card-content {
+    background: rgba(0, 0, 0, 0.9);
+    backdrop-filter: none;
+  }
+
+  .svts-play-btn {
+    border: 2px solid #fff;
+  }
 }
